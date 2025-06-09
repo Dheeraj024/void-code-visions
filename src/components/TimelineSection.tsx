@@ -4,52 +4,40 @@ import { Card, CardContent } from "@/components/ui/card";
 const TimelineSection = () => {
   const timeline = [
     {
-      year: "2022",
-      title: "Senior ML Engineer",
-      company: "TechCorp AI",
-      description: "Leading a team of 8 data scientists, developing large-scale ML systems processing 100M+ daily transactions.",
-      achievements: ["Reduced model inference time by 40%", "Implemented MLOps pipeline", "Led AI ethics initiative"],
-      type: "work"
+      year: "2024",
+      title: "Software Engineer",
+      company: "Parachute Technology Private Limited",
+      description: "Developing Maritime Search and Rescue Integrated Incident Management and Operational Planning Software for real-time monitoring and emergency response.",
+      achievements: ["Lead stakeholder meetings for requirement analysis", "Designed MSAR architecture using React and Django", "Developed interactive layered map visualization using Leaflet.js"],
+      type: "work",
+      period: "July 2024 - Present"
+    },
+    {
+      year: "2024",
+      title: "M.Tech Graduate",
+      company: "IIT Bombay",
+      description: "Completed Master's in Geoinformatics and Natural Resources Engineering with focus on machine learning applications in geospatial analysis.",
+      achievements: ["CGPA: 8.93/10", "Research on Gaussian Process Regression", "Specialized in geospatial data analysis"],
+      type: "education",
+      period: "September 2022 - June 2024"
+    },
+    {
+      year: "2023",
+      title: "Machine Learning Intern",
+      company: "NoQs Digital",
+      description: "Worked on Bitcoin transactions detection using machine learning techniques and developed various classification models.",
+      achievements: ["Pre-processed Elliptic dataset with 23% illicit labels", "Evaluated supervised and unsupervised clustering methods", "Achieved F1-Score of 0.83 comparable to best baseline"],
+      type: "work",
+      period: "July 2023 - August 2023"
     },
     {
       year: "2021",
-      title: "Ph.D. Graduation",
-      company: "Stanford University",
-      description: "Completed doctoral research on 'Efficient Deep Learning for Edge Computing' with summa cum laude honors.",
-      achievements: ["Published 8 research papers", "Best Thesis Award", "Research Fellowship recipient"],
-      type: "education"
-    },
-    {
-      year: "2020",
-      title: "Research Scientist",
-      company: "Google DeepMind",
-      description: "Contributed to breakthrough research in reinforcement learning and neural architecture search.",
-      achievements: ["Co-authored Nature paper", "Patent on RL optimization", "Open-sourced AutoML library"],
-      type: "work"
-    },
-    {
-      year: "2019",
-      title: "ML Engineering Intern",
-      company: "NVIDIA",
-      description: "Optimized deep learning models for GPU acceleration, focusing on computer vision applications.",
-      achievements: ["Improved training speed by 60%", "Developed CUDA kernels", "Mentored junior interns"],
-      type: "work"
-    },
-    {
-      year: "2018",
-      title: "Master's Degree",
-      company: "MIT",
-      description: "Specialized in statistical learning theory and deep neural network optimization techniques.",
-      achievements: ["GPA: 3.9/4.0", "TA for ML course", "Published thesis work"],
-      type: "education"
-    },
-    {
-      year: "2016",
-      title: "Research Assistant",
-      company: "UC Berkeley",
-      description: "First exposure to machine learning research, working on probabilistic models and Bayesian inference.",
-      achievements: ["First research publication", "Grant recipient", "Honors graduate"],
-      type: "education"
+      title: "B.Tech Graduate",
+      company: "IIT Jodhpur",
+      description: "Completed Bachelor's in Electrical Engineering with foundation in signal processing and control systems.",
+      achievements: ["CGPA: 6.78/10", "Strong technical foundation", "Electrical engineering expertise"],
+      type: "education",
+      period: "August 2017 - June 2021"
     }
   ];
 
@@ -91,11 +79,16 @@ const TimelineSection = () => {
                         </span>
                       </div>
                       
-                      <p className={`font-medium mb-3 ${
-                        item.type === "work" ? "text-blue-400" : "text-purple-400"
-                      }`}>
-                        {item.company}
-                      </p>
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
+                        <p className={`font-medium ${
+                          item.type === "work" ? "text-blue-400" : "text-purple-400"
+                        }`}>
+                          {item.company}
+                        </p>
+                        <span className="text-sm text-gray-400 mt-1 sm:mt-0">
+                          {item.period}
+                        </span>
+                      </div>
                       
                       <p className="text-gray-300 leading-relaxed mb-4">
                         {item.description}

@@ -6,44 +6,44 @@ const SkillsSection = () => {
     {
       title: "Machine Learning",
       skills: [
-        { name: "Supervised Learning", level: 95 },
-        { name: "Unsupervised Learning", level: 90 },
-        { name: "Reinforcement Learning", level: 85 },
-        { name: "Feature Engineering", level: 92 },
-        { name: "Model Optimization", level: 88 }
+        { name: "Supervised Learning", level: 85 },
+        { name: "Unsupervised Learning", level: 80 },
+        { name: "Deep Learning", level: 88 },
+        { name: "Computer Vision", level: 90 },
+        { name: "NLP", level: 82 }
       ],
       color: "blue"
     },
     {
-      title: "Deep Learning",
+      title: "Programming & Frameworks",
       skills: [
-        { name: "Neural Networks", level: 93 },
-        { name: "CNNs", level: 95 },
-        { name: "RNNs/LSTMs", level: 87 },
-        { name: "Transformers", level: 89 },
-        { name: "GANs", level: 82 }
+        { name: "Python", level: 92 },
+        { name: "PyTorch", level: 85 },
+        { name: "OpenCV", level: 88 },
+        { name: "Pandas", level: 87 },
+        { name: "NumPy", level: 90 }
       ],
       color: "purple"
     },
     {
-      title: "Programming & Tools",
+      title: "Data Science Tools",
       skills: [
-        { name: "Python", level: 96 },
-        { name: "TensorFlow/Keras", level: 92 },
-        { name: "PyTorch", level: 89 },
-        { name: "Scikit-learn", level: 94 },
-        { name: "SQL", level: 88 }
+        { name: "Scikit-learn", level: 85 },
+        { name: "Matplotlib", level: 83 },
+        { name: "Seaborn", level: 80 },
+        { name: "NLTK", level: 78 },
+        { name: "SpaCy", level: 75 }
       ],
       color: "green"
     },
     {
-      title: "Data & Analytics",
+      title: "Development & Tools",
       skills: [
-        { name: "Data Analysis", level: 93 },
-        { name: "Statistical Modeling", level: 91 },
-        { name: "Data Visualization", level: 87 },
-        { name: "A/B Testing", level: 85 },
-        { name: "ETL Pipelines", level: 83 }
+        { name: "React.js", level: 82 },
+        { name: "Django", level: 80 },
+        { name: "Flask", level: 83 },
+        { name: "Git", level: 85 },
+        { name: "SQL", level: 78 }
       ],
       color: "pink"
     }
@@ -110,14 +110,14 @@ const SkillsSection = () => {
         {/* Additional Technologies */}
         <div className="mt-16">
           <h3 className="text-2xl font-semibold text-center mb-8 text-blue-400">
-            Technologies & Frameworks
+            Technologies & Tools
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "Python", "R", "TensorFlow", "PyTorch", "Keras", "Scikit-learn", 
-              "Pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly", "Docker", 
-              "Kubernetes", "AWS", "GCP", "Apache Spark", "Hadoop", "MLflow",
-              "Git", "Jupyter", "Linux", "MongoDB", "PostgreSQL"
+              "Python", "PyTorch", "OpenCV", "Scikit-learn", "Pandas", "NumPy", 
+              "Matplotlib", "Seaborn", "NLTK", "SpaCy", "React.js", "Django", 
+              "Flask", "Git", "SQL", "MongoDB", "PostgreSQL", "Streamlit", 
+              "PowerBI", "CUDA", "Plotly", "Jupyter", "Linux"
             ].map((tech, index) => (
               <span
                 key={index}

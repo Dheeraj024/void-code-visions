@@ -6,40 +6,44 @@ import { ExternalLink, Github } from "lucide-react";
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Neural Network Image Classifier",
-      description: "Deep learning model achieving 97% accuracy on CIFAR-10 dataset using CNN architecture with data augmentation and transfer learning.",
-      tech: ["Python", "TensorFlow", "CNN", "Transfer Learning"],
-      type: "Professional",
+      title: "Scaled Gaussian Process Regression Model",
+      description: "Vegetation Bio-physical Parameter Retrieval using advanced Gaussian Process Regression with enhanced scalability for large agricultural datasets.",
+      tech: ["Python", "Gaussian Process", "Remote Sensing", "Agriculture"],
+      type: "Research",
       image: "photo-1487058792275-0ad4aaf24ca7",
       github: "#",
-      demo: "#"
+      demo: "#",
+      period: "July 2023 - June 2024"
     },
     {
-      title: "NLP Sentiment Analysis Platform",
-      description: "Real-time sentiment analysis system processing 10K+ social media posts daily using BERT and transformer models.",
-      tech: ["BERT", "PyTorch", "Flask", "Docker"],
-      type: "Professional",
+      title: "Brain Tumor Image Segmentation",
+      description: "Deep Learning model for semantic segmentation of tumor regions using CNN architecture with Adam optimizer achieving high accuracy.",
+      tech: ["Deep Learning", "CNN", "Medical Imaging", "PyTorch"],
+      type: "Academic",
       image: "photo-1526374965328-7f61d4dc18c5",
       github: "#",
-      demo: "#"
+      demo: "#",
+      period: "April 2023 - June 2023"
     },
     {
-      title: "Predictive Analytics Dashboard",
-      description: "Interactive dashboard predicting customer churn with 89% accuracy using ensemble methods and feature engineering.",
-      tech: ["Scikit-learn", "Streamlit", "Pandas", "XGBoost"],
-      type: "Personal",
+      title: "LLM Chatbot with RAG",
+      description: "Retrieval Augmented Generation chatbot using LangChain for enhanced NLP-based retrieval with FAISS for efficient vector database management.",
+      tech: ["LangChain", "RAG", "NLP", "FAISS", "Streamlit"],
+      type: "Professional",
       image: "photo-1531297484001-80022131f5a1",
       github: "#",
-      demo: "#"
+      demo: "#",
+      period: "October 2023 - November 2023"
     },
     {
-      title: "Computer Vision Art Generator",
-      description: "GANs-based art generation system creating unique digital artwork from text prompts with style transfer capabilities.",
-      tech: ["GANs", "StyleGAN", "OpenCV", "Stable Diffusion"],
-      type: "Personal",
+      title: "Maritime Search & Rescue System",
+      description: "Real-time incident management and operational planning software for maritime search and rescue operations using React and Django.",
+      tech: ["React", "Django", "Real-time Systems", "Maritime"],
+      type: "Professional",
       image: "photo-1485827404703-89b55fcc595e",
       github: "#",
-      demo: "#"
+      demo: "#",
+      period: "July 2024 - Present"
     }
   ];
 
@@ -66,9 +70,16 @@ const ProjectsSection = () => {
                   <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
                     project.type === "Professional" 
                       ? "bg-blue-600/80 text-blue-100" 
+                      : project.type === "Research"
+                      ? "bg-green-600/80 text-green-100"
                       : "bg-purple-600/80 text-purple-100"
                   }`}>
                     {project.type}
+                  </span>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <span className="px-2 py-1 text-xs bg-black/60 text-gray-300 rounded">
+                    {project.period}
                   </span>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -61,7 +61,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-20">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-fade-in">
-            Alex Chen
+            Dheeraj Kumar
           </h1>
           
           <div className="h-20 mb-8">

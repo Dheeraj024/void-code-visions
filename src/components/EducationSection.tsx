@@ -6,34 +6,35 @@ import { Download } from "lucide-react";
 const EducationSection = () => {
   const education = [
     {
-      degree: "Ph.D. in Computer Science",
-      school: "Stanford University",
-      year: "2018-2022",
-      focus: "Machine Learning & Artificial Intelligence",
-      achievements: ["Summa Cum Laude", "Research Fellowship", "Published 8 papers"]
+      degree: "M.Tech in Geoinformatics and Natural Resources Engineering",
+      school: "IIT Bombay",
+      year: "September 2022 - June 2024",
+      focus: "Geospatial Data Analysis & Machine Learning",
+      achievements: ["CGPA: 8.93/10", "Research in ML applications", "Geoinformatics specialization"]
     },
     {
-      degree: "M.S. in Data Science",
-      school: "MIT",
-      year: "2016-2018",
-      focus: "Statistical Learning & Deep Neural Networks",
-      achievements: ["GPA: 3.9/4.0", "Teaching Assistant", "Thesis on CNN Optimization"]
+      degree: "B.Tech in Electrical Engineering",
+      school: "IIT Jodhpur",
+      year: "August 2017 - June 2021",
+      focus: "Signal Processing & Control Systems",
+      achievements: ["CGPA: 6.78/10", "Electrical Engineering foundations", "Technical project experience"]
     },
     {
-      degree: "B.S. in Mathematics",
-      school: "UC Berkeley",
-      year: "2012-2016",
-      focus: "Applied Mathematics & Statistics",
-      achievements: ["Magna Cum Laude", "Math Society President", "Research Grant Recipient"]
+      degree: "Higher Secondary",
+      school: "City Montessori Inter College",
+      year: "August 2015 - June 2017",
+      focus: "Science & Mathematics",
+      achievements: ["Percentage: 91.8/100", "Strong academic foundation", "Science specialization"]
     }
   ];
 
-  const certifications = [
-    "Google Cloud Professional ML Engineer",
-    "AWS Certified Machine Learning - Specialty",
-    "TensorFlow Developer Certificate",
-    "Deep Learning Specialization (Coursera)",
-    "MLOps Engineering Certificate"
+  const skills = [
+    "Machine Learning & Deep Learning",
+    "Python Programming",
+    "PyTorch & OpenCV",
+    "Natural Language Processing",
+    "Computer Vision",
+    "Data Analysis & Visualization"
   ];
 
   return (
@@ -73,32 +74,35 @@ const EducationSection = () => {
             </div>
           </div>
 
-          {/* Certifications & Resume */}
+          {/* Skills & Resume */}
           <div>
-            <h3 className="text-2xl font-semibold mb-8 text-purple-400">Certifications</h3>
+            <h3 className="text-2xl font-semibold mb-8 text-purple-400">Core Skills</h3>
             <Card className="bg-black/40 backdrop-blur-md border border-purple-500/20 mb-8">
               <CardContent className="p-6">
                 <div className="space-y-3">
-                  {certifications.map((cert, index) => (
+                  {skills.map((skill, index) => (
                     <div key={index} className="flex items-center text-gray-300">
                       <span className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mr-3"></span>
-                      {cert}
+                      {skill}
                     </div>
                   ))}
                 </div>
               </CardContent>
             </Card>
 
-            {/* Resume Download */}
+            {/* Contact Information */}
             <Card className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-md border border-purple-500/30">
               <CardContent className="p-8 text-center">
-                <h4 className="text-xl font-semibold mb-4 text-white">Download Resume</h4>
-                <p className="text-gray-300 mb-6">
-                  Get the complete overview of my experience, skills, and achievements in a comprehensive PDF format.
-                </p>
+                <h4 className="text-xl font-semibold mb-4 text-white">Get In Touch</h4>
+                <div className="space-y-2 text-gray-300 mb-6">
+                  <p>📧 dheerajk1511@gmail.com</p>
+                  <p>📱 +91 7355399112</p>
+                  <p>🔗 github.com/Dheeraj024</p>
+                  <p>💼 linkedin.com/in/dheerajdk024</p>
+                </div>
                 <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white flex items-center gap-2 mx-auto">
                   <Download size={20} />
-                  Download CV
+                  Download Resume
                 </Button>
               </CardContent>
             </Card>
