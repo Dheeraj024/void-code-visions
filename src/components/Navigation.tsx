@@ -30,10 +30,10 @@ const Navigation = ({ activeSection }: NavigationProps) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-md border-b border-purple-500/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-cyan-500/20">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <div className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
             DataSci.AI
           </div>
 
@@ -43,15 +43,15 @@ const Navigation = ({ activeSection }: NavigationProps) => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-blue-400 ${
+                className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-cyan-400 ${
                   activeSection === item.id
-                    ? "text-blue-400"
+                    ? "text-cyan-400"
                     : "text-gray-300"
                 }`}
               >
                 {item.label}
                 {activeSection === item.id && (
-                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full" />
+                  <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full" />
                 )}
               </button>
             ))}
@@ -60,7 +60,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 text-gray-300 hover:text-white"
+            className="md:hidden p-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -68,15 +68,15 @@ const Navigation = ({ activeSection }: NavigationProps) => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-black/40 backdrop-blur-md border-t border-purple-500/20">
+          <div className="md:hidden bg-black/60 backdrop-blur-md border-t border-cyan-500/20">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-blue-400 ${
+                  className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors duration-200 hover:text-cyan-400 ${
                     activeSection === item.id
-                      ? "text-blue-400"
+                      ? "text-cyan-400"
                       : "text-gray-300"
                   }`}
                 >

@@ -36,46 +36,55 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-x-hidden">
-      <Navigation activeSection={activeSection} />
+    <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Enhanced futuristic background with moving gradients */}
+      <div className="fixed inset-0 bg-gradient-to-br from-black via-slate-950 to-black">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-black to-black"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
+      </div>
       
-      <main>
-        <section id="hero">
-          <HeroSection />
-        </section>
+      <div className="relative z-10">
+        <Navigation activeSection={activeSection} />
         
-        <section id="about">
-          <AboutSection />
-        </section>
-        
-        <section id="projects">
-          <ProjectsSection />
-        </section>
-        
-        <section id="education">
-          <EducationSection />
-        </section>
-        
-        <section id="skills">
-          <SkillsSection />
-        </section>
-        
-        <section id="hobbies">
-          <HobbiesSection />
-        </section>
-        
-        <section id="timeline">
-          <TimelineSection />
-        </section>
-        
-        <section id="contact">
-          <ContactSection />
-        </section>
-        
-        <section id="blog">
-          <BlogSection />
-        </section>
-      </main>
+        <main>
+          <section id="hero">
+            <HeroSection />
+          </section>
+          
+          <section id="about">
+            <AboutSection />
+          </section>
+          
+          <section id="projects">
+            <ProjectsSection />
+          </section>
+          
+          <section id="education">
+            <EducationSection />
+          </section>
+          
+          <section id="skills">
+            <SkillsSection />
+          </section>
+          
+          <section id="hobbies">
+            <HobbiesSection />
+          </section>
+          
+          <section id="timeline">
+            <TimelineSection />
+          </section>
+          
+          <section id="contact">
+            <ContactSection />
+          </section>
+          
+          <section id="blog">
+            <BlogSection />
+          </section>
+        </main>
+      </div>
     </div>
   );
 };
