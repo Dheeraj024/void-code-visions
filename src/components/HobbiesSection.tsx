@@ -1,5 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { ImageSwiper } from "@/components/ImageSwiper";
 
 const HobbiesSection = () => {
   const hobbies = [
@@ -28,6 +29,16 @@ const HobbiesSection = () => {
       category: "Technical"
     }
   ];
+
+  // Sample artwork images for the swiper
+  const artworkImages = [
+    "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    "https://images.unsplash.com/photo-1549490349-8643362247b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    "https://images.unsplash.com/photo-1569420958889-51e813d67cb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+    "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+  ].join(', ');
 
   return (
     <div className="py-20 px-4">
@@ -66,24 +77,23 @@ const HobbiesSection = () => {
           ))}
         </div>
 
-        {/* Art Gallery Preview */}
+        {/* Interactive Art Gallery with Swiper */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold mb-8 text-purple-400">Featured Artwork</h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((item, index) => (
-              <div 
-                key={index} 
-                className="aspect-square bg-gradient-to-br from-blue-600/20 to-purple-600/20 rounded-lg border border-purple-500/30 hover:border-purple-500/60 transition-all duration-300 group cursor-pointer overflow-hidden"
-              >
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/10 to-purple-500/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <div className="text-4xl opacity-60 group-hover:opacity-100 transition-opacity duration-300">
-                    🎨
-                  </div>
-                </div>
-              </div>
-            ))}
+          <h3 className="text-2xl font-semibold mb-8 text-purple-400">Featured Artwork Gallery</h3>
+          <p className="text-gray-400 mb-8 text-sm">Swipe through my digital art and AI-generated creations</p>
+          
+          <div className="flex justify-center">
+            <ImageSwiper 
+              images={artworkImages}
+              cardWidth={280}
+              cardHeight={380}
+              className="mx-auto"
+            />
           </div>
-          <p className="text-gray-400 mt-4 text-sm">Gallery coming soon - showcasing AI-generated and digital artwork</p>
+          
+          <p className="text-gray-400 mt-6 text-sm">
+            Each piece represents a unique exploration of digital creativity and AI-assisted art generation
+          </p>
         </div>
       </div>
     </div>

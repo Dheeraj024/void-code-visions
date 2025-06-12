@@ -1,9 +1,9 @@
 
-'use client'
+'use client';
 
-import React, { useRef, useState, useMemo, useEffect } from 'react'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
-import * as THREE from 'three'
+import React, { useRef, useState, useMemo, useEffect } from 'react';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import * as THREE from 'three';
 
 interface NodeProps {
   position: [number, number, number];
@@ -13,17 +13,21 @@ interface NodeProps {
   onHover: (id: string | null) => void;
 }
 
+interface ConnectionProps {
+  start: [number, number, number];
+  end: [number, number, number];
+  isActive: boolean;
+}
+
 const Node = ({ position, id, connections, hoveredNode, onHover }: NodeProps) => {
   const meshRef = useRef<THREE.Mesh>(null);
   const [currentScale, setCurrentScale] = useState(1);
-  
   const isHovered = hoveredNode === id;
   const isConnected = hoveredNode && connections.includes(hoveredNode);
-  
+
   useFrame(() => {
     if (meshRef.current) {
       let targetScale = 1;
-      
       if (isHovered) {
         targetScale = 2.5;
       } else if (isConnected) {
@@ -33,7 +37,6 @@ const Node = ({ position, id, connections, hoveredNode, onHover }: NodeProps) =>
       const lerpFactor = 0.15;
       const newScale = currentScale + (targetScale - currentScale) * lerpFactor;
       setCurrentScale(newScale);
-      
       meshRef.current.scale.setScalar(newScale);
     }
   });
@@ -47,7 +50,7 @@ const Node = ({ position, id, connections, hoveredNode, onHover }: NodeProps) =>
       userData={{ nodeId: id }}
     >
       <sphereGeometry args={[0.3, 32, 32]} />
-      <meshPhysicalMaterial 
+      <meshPhysicalMaterial
         color={isHovered ? "#00ffff" : isConnected ? "#0088ff" : "#ffffff"}
         roughness={0.1}
         metalness={0.8}
@@ -59,12 +62,6 @@ const Node = ({ position, id, connections, hoveredNode, onHover }: NodeProps) =>
     </mesh>
   );
 };
-
-interface ConnectionProps {
-  start: [number, number, number];
-  end: [number, number, number];
-  isActive: boolean;
-}
 
 const Connection = ({ start, end, isActive }: ConnectionProps) => {
   const lineRef = useRef<THREE.Line>(null);
@@ -85,7 +82,7 @@ const Connection = ({ start, end, isActive }: ConnectionProps) => {
 
   return (
     <line ref={lineRef} geometry={geometry}>
-      <lineBasicMaterial 
+      <lineBasicMaterial
         color={isActive ? "#00ffff" : "#444444"}
         transparent
         opacity={isActive ? 0.8 : 0.3}
@@ -97,21 +94,30 @@ const Connection = ({ start, end, isActive }: ConnectionProps) => {
 
 function NeuralNetworkGrid() {
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
-  
+
   // Create neural network structure
   const networkData = useMemo(() => {
     const layers = [4, 6, 8, 6, 3]; // Input, hidden layers, output
-    const nodes: { id: string; position: [number, number, number]; connections: string[] }[] = [];
-    const connections: { start: [number, number, number]; end: [number, number, number]; startId: string; endId: string }[] = [];
-    
+    const nodes: Array<{
+      id: string;
+      position: [number, number, number];
+      connections: string[];
+    }> = [];
+    const connections: Array<{
+      start: [number, number, number];
+      end: [number, number, number];
+      startId: string;
+      endId: string;
+    }> = [];
+
     // Generate nodes
     layers.forEach((layerSize, layerIndex) => {
       for (let nodeIndex = 0; nodeIndex < layerSize; nodeIndex++) {
         const x = (layerIndex - layers.length / 2) * 6;
         const y = (nodeIndex - (layerSize - 1) / 2) * 2;
         const z = 0;
-        
         const nodeId = `${layerIndex}-${nodeIndex}`;
+        
         nodes.push({
           id: nodeId,
           position: [x, y, z],
@@ -119,12 +125,11 @@ function NeuralNetworkGrid() {
         });
       }
     });
-    
+
     // Generate connections between adjacent layers
     layers.forEach((layerSize, layerIndex) => {
       if (layerIndex < layers.length - 1) {
         const nextLayerSize = layers[layerIndex + 1];
-        
         for (let currentNode = 0; currentNode < layerSize; currentNode++) {
           for (let nextNode = 0; nextNode < nextLayerSize; nextNode++) {
             const currentId = `${layerIndex}-${currentNode}`;
@@ -148,7 +153,7 @@ function NeuralNetworkGrid() {
         }
       }
     });
-    
+
     return { nodes, connections };
   }, []);
 
@@ -156,7 +161,6 @@ function NeuralNetworkGrid() {
 
   return (
     <>
-      {/* Render connections */}
       {connections.map((conn, index) => (
         <Connection
           key={index}
@@ -165,8 +169,6 @@ function NeuralNetworkGrid() {
           isActive={hoveredNode === conn.startId || hoveredNode === conn.endId}
         />
       ))}
-      
-      {/* Render nodes */}
       {nodes.map((node) => (
         <Node
           key={node.id}
@@ -197,10 +199,10 @@ function CameraController() {
 export function NeuralNetworkVisualization() {
   return (
     <div className="h-full w-full bg-black relative">
-      <Canvas 
-        camera={{ 
-          position: [15, 8, 15], 
-          fov: 50 
+      <Canvas
+        camera={{
+          position: [15, 8, 15],
+          fov: 50
         }}
       >
         <ambientLight intensity={0.4} />
@@ -225,7 +227,7 @@ export function NeuralNetworkVisualization() {
         />
         
         <CameraController />
-        <NeuralNetworkGrid />
+        <NeuralNetworkGrid />        
       </Canvas>
     </div>
   );
