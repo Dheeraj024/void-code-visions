@@ -55,7 +55,7 @@ const HobbiesSection = () => {
         {/* Interactive Art Gallery with Swiper */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-semibold mb-8 text-purple-400">My Artwork Gallery</h3>
-          <p className="text-gray-400 mb-8 text-sm">Swipe through my digital art and AI-generated creations</p>
+          <p className="text-gray-400 mb-8 text-sm">Swipe through my creations</p>
           
           <div className="flex justify-center">
             <ImageSwiper images={artworkImages} cardWidth={280} cardHeight={380} className="mx-auto" />
