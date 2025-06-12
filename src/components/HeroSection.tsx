@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
-import { NeuralNetworkVisualization } from "@/components/NeuralNetwork";
 
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
@@ -28,11 +27,6 @@ const HeroSection = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 bg-black">
-      {/* Neural Network Background */}
-      <div className="absolute inset-0 w-full h-full opacity-40">
-        <NeuralNetworkVisualization />
-      </div>
-
       {/* Sparkles Background */}
       <div className="w-full absolute inset-0 h-screen opacity-60">
         <SparklesCore
