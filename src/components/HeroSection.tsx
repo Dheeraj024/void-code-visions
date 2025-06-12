@@ -1,13 +1,10 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { SparklesCore } from "@/components/ui/sparkles";
-
 const HeroSection = () => {
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const fullText = "Machine Learning & Deep Learning Engineer";
-
   useEffect(() => {
     if (currentIndex < fullText.length) {
       const timeout = setTimeout(() => {
@@ -17,28 +14,18 @@ const HeroSection = () => {
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, fullText]);
-
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
-  return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 bg-black">
+  return <div className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16 bg-black">
       {/* Sparkles Background */}
       <div className="w-full absolute inset-0 h-screen opacity-60">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={80}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-          speed={0.3}
-        />
+        <SparklesCore id="tsparticlesfullpage" background="transparent" minSize={0.6} maxSize={1.4} particleDensity={80} className="w-full h-full" particleColor="#FFFFFF" speed={0.3} />
       </div>
 
       {/* Enhanced Animated Background */}
@@ -60,9 +47,7 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 text-center relative z-20">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-fade-in">
-            Shubhanshu Singh
-          </h1>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-fade-in">Dheeraj Kumar</h1>
           
           <div className="h-20 mb-8">
             <p className="text-xl md:text-2xl text-cyan-300 font-light">
@@ -77,17 +62,10 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              onClick={() => scrollToSection("projects")}
-              className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 border border-cyan-500/30"
-            >
+            <Button onClick={() => scrollToSection("projects")} className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 border border-cyan-500/30">
               View My Work
             </Button>
-            <Button
-              onClick={() => scrollToSection("contact")}
-              variant="outline"
-              className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 rounded-full font-semibold transition-all duration-300 backdrop-blur-sm"
-            >
+            <Button onClick={() => scrollToSection("contact")} variant="outline" className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-3 rounded-full font-semibold transition-all duration-300 backdrop-blur-sm">
               Get In Touch
             </Button>
           </div>
@@ -100,8 +78,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default HeroSection;
