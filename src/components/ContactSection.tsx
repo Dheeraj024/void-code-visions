@@ -91,10 +91,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="py-20 px-4">
+    <div className="py-20 px-4 bg-black">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-          Let's Connect
+          Get In Touch
         </h2>
 
         <div className="grid lg:grid-cols-2 gap-12">
@@ -168,21 +168,24 @@ const ContactSection = () => {
           <div className="space-y-8">
             <Card className="bg-black/40 backdrop-blur-md border border-purple-500/20">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold mb-6 text-white">Get In Touch</h3>
+                <h3 className="text-2xl font-semibold mb-6 text-white">Contact Information</h3>
                 <div className="space-y-4 text-gray-300">
-                  <p>
-                    I'm always excited to discuss new opportunities, collaborations, or just chat about the latest in AI and machine learning.
+                  <p className="flex items-center gap-3">
+                    <Mail className="text-blue-400" size={20} />
+                    dheerajk1511@gmail.com
                   </p>
-                  <div className="space-y-2">
-                    <p className="flex items-center gap-3">
-                      <Mail className="text-blue-400" size={20} />
-                      alex.chen@datasci.ai
-                    </p>
-                    <p className="flex items-center gap-3">
-                      <span className="text-purple-400 text-xl">📍</span>
-                      San Francisco, CA
-                    </p>
-                  </div>
+                  <p className="flex items-center gap-3">
+                    <span className="text-purple-400 text-xl">📱</span>
+                    +91 7355399112
+                  </p>
+                  <p className="flex items-center gap-3">
+                    <span className="text-purple-400 text-xl">📍</span>
+                    Available for Remote Work
+                  </p>
+                  <p className="flex items-center gap-3">
+                    <span className="text-blue-400 text-xl">🔗</span>
+                    github.com/Dheeraj024
+                  </p>
                 </div>
               </CardContent>
             </Card>
