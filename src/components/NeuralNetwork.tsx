@@ -64,8 +64,6 @@ const Node = ({ position, id, connections, hoveredNode, onHover }: NodeProps) =>
 };
 
 const Connection = ({ start, end, isActive }: ConnectionProps) => {
-  const lineRef = useRef<THREE.Line>(null);
-  
   const geometry = useMemo(() => {
     const points = [
       new THREE.Vector3(...start),
@@ -81,12 +79,11 @@ const Connection = ({ start, end, isActive }: ConnectionProps) => {
   }, [geometry]);
 
   return (
-    <line ref={lineRef} geometry={geometry}>
+    <line geometry={geometry}>
       <lineBasicMaterial
         color={isActive ? "#00ffff" : "#444444"}
         transparent
         opacity={isActive ? 0.8 : 0.3}
-        linewidth={isActive ? 3 : 1}
       />
     </line>
   );
