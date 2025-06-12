@@ -91,16 +91,16 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="py-20 px-4 bg-black">
-      <div className="container mx-auto max-w-6xl">
+    <div className="py-20 px-4 bg-black min-h-screen">
+      <div className="container mx-auto max-w-6xl bg-black">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           Get In Touch
         </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 bg-black">
           {/* Contact Form */}
-          <Card className="bg-black/40 backdrop-blur-md border border-purple-500/20">
-            <CardContent className="p-8">
+          <Card className="bg-black/90 backdrop-blur-md border border-purple-500/20 shadow-2xl">
+            <CardContent className="p-8 bg-black/90">
               <h3 className="text-2xl font-semibold mb-6 text-white flex items-center gap-3">
                 <MessageSquare className="text-blue-400" size={28} />
                 Send a Message
@@ -116,7 +116,7 @@ const ContactSection = () => {
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="pl-10 bg-black/20 border-purple-500/30 text-white placeholder-gray-400 focus:border-blue-400"
+                      className="pl-10 bg-black/60 border-purple-500/30 text-white placeholder-gray-400 focus:border-blue-400"
                       required
                     />
                   </div>
@@ -128,7 +128,7 @@ const ContactSection = () => {
                       placeholder="Your Email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="pl-10 bg-black/20 border-purple-500/30 text-white placeholder-gray-400 focus:border-blue-400"
+                      className="pl-10 bg-black/60 border-purple-500/30 text-white placeholder-gray-400 focus:border-blue-400"
                       required
                     />
                   </div>
@@ -140,7 +140,7 @@ const ContactSection = () => {
                   placeholder="Subject"
                   value={formData.subject}
                   onChange={handleInputChange}
-                  className="bg-black/20 border-purple-500/30 text-white placeholder-gray-400 focus:border-blue-400"
+                  className="bg-black/60 border-purple-500/30 text-white placeholder-gray-400 focus:border-blue-400"
                 />
 
                 <Textarea
@@ -149,7 +149,7 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={6}
-                  className="bg-black/20 border-purple-500/30 text-white placeholder-gray-400 focus:border-blue-400 resize-none"
+                  className="bg-black/60 border-purple-500/30 text-white placeholder-gray-400 focus:border-blue-400 resize-none"
                   required
                 />
 
@@ -165,9 +165,9 @@ const ContactSection = () => {
           </Card>
 
           {/* Contact Info & Social Links */}
-          <div className="space-y-8">
-            <Card className="bg-black/40 backdrop-blur-md border border-purple-500/20">
-              <CardContent className="p-8">
+          <div className="space-y-8 bg-black">
+            <Card className="bg-black/90 backdrop-blur-md border border-purple-500/20 shadow-2xl">
+              <CardContent className="p-8 bg-black/90">
                 <h3 className="text-2xl font-semibold mb-6 text-white">Contact Information</h3>
                 <div className="space-y-4 text-gray-300">
                   <p className="flex items-center gap-3">
@@ -190,8 +190,8 @@ const ContactSection = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-black/40 backdrop-blur-md border border-purple-500/20">
-              <CardContent className="p-8">
+            <Card className="bg-black/90 backdrop-blur-md border border-purple-500/20 shadow-2xl">
+              <CardContent className="p-8 bg-black/90">
                 <h3 className="text-2xl font-semibold mb-6 text-white">Follow My Work</h3>
                 <div className="grid grid-cols-2 gap-4">
                   {socialLinks.map((social, index) => (
